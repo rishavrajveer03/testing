@@ -1,0 +1,478 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Sun High School</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+
+        .header {
+            background-color: #007bff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .news {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .news span {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            align-items: center;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+        }
+
+        .navbar .logo h1 {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .navbar-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .hero {
+    position: relative;
+    background-image: url("front1.png");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 315px 20px;
+}
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+    position: absolute; /* Position the content absolutely */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    text-align: left; /* Align text to the left */
+    max-width: 600px; /* Optional: Limit the content width */
+}
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-links {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+
+            .navbar a {
+                margin: 5px 0;
+            }
+        }
+    
+       
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .notice-board {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .notice-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px 20px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .notice-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .notice-item .content {
+            max-width: 80%;
+        }
+
+        .notice-item .content h3 {
+            margin: 0 0 5px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .notice-item .content p {
+            margin: 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .notice-item .date {
+            font-size: 14px;
+            color: #666;
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .notice-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .notice-item .date {
+                text-align: left;
+                margin-top: 10px;
+            }
+        }
+        .footer {
+            background-color: #ffa500;
+            color: #000;
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+            min-width: 250px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .footer-column h3 {
+            color: #003366;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #003366;
+            display: inline-block;
+        }
+        .footer-column p, .footer-column ul {
+            margin: 0;
+            line-height: 1.8;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin: 8px 0;
+        }
+        .footer-column a {
+            color: #003366;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+        .footer .separator {
+            border-left: 2px solid #003366;
+            height: auto;
+            margin: 0 20px;
+        }
+        .logos img {
+            height: 50px;
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+        .logos img:hover {
+            transform: scale(1.1);
+        }
+        .copyright {
+            text-align: center;
+            background-color: #003366;
+            color: #fff;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .footer-column:nth-child(3) {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer .separator {
+                display: none;
+            }
+            .footer-column {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="news">
+            <span>Discipline is the root of true education.</span>
+        </div>
+    </div>
+    
+    <div class="navbar">
+        <div class="logo">
+            <img src="frontlogo.jpeg" alt="Logo">
+            <h1> Rising Sun High School</h1>
+        </div>
+         <div class="navbar-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About us</a>
+            <a href="../acedemics.html">Academics</a>
+            <a href="../admission.html">Admission</a>
+            <a href="../gallary.html">Gallery</a>
+            <a href="../noticeboard.html">Notice Board</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Rising Sun High School</h1>
+            <p>Excellence in Education and Beyond</p>
+        </div>
+    </div> 
+
+<div class="header">
+    Notice Board
+</div>
+
+<div class="container">
+    <div class="notice-board">
+        <!-- Example Notice Item -->
+        <div class="notice-item">
+            <div class="content">
+                <h3>Annual Day Celebration</h3>
+                <p>The Annual Day celebration is scheduled for 25th January 2025. All students and parents are invited to attend.</p>
+            </div>
+            <div class="date">10 Jan 2025</div>
+        </div>
+
+        <div class="notice-item">
+            <div class="content">
+                <h3>Exam Schedule Update</h3>
+                <p>The mid-term exams have been rescheduled. Please check the updated timetable on the school website.</p>
+            </div>
+            <div class="date">8 Jan 2025</div>
+        </div>
+
+        <div class="notice-item">
+            <div class="content">
+                <h3>Winter Vacation Notice</h3>
+                <p>Winter vacations will start from 15th December 2024 to 2nd January 2025.</p>
+            </div>
+            <div class="date">5 Dec 2024</div>
+        </div>
+
+        <!-- Additional Notices -->
+        <div class="notice-item">
+            <div class="content">
+                <h3>Parent-Teacher Meeting</h3>
+                <p>The next parent-teacher meeting is scheduled for 20th February 2025. Please ensure your attendance.</p>
+            </div>
+            <div class="date">5 Feb 2025</div>
+        </div>
+
+        <div class="notice-item">
+            <div class="content">
+                <h3>Sports Day Event</h3>
+                <p>Sports Day will be held on 10th March 2025. Students are encouraged to participate actively.</p>
+            </div>
+            <div class="date">1 Mar 2025</div>
+        </div>
+
+        <div class="notice-item">
+            <div class="content">
+                <h3>Library Week Celebration</h3>
+                <p>Library Week starts on 5th April 2025. Join us for various literary activities and contests.</p>
+            </div>
+            <div class="date">28 Mar 2025</div>
+        </div>
+
+        <div class="notice-item">
+            <div class="content">
+                <h3>Workshop on Career Counseling</h3>
+                <p>A career counseling workshop will be conducted for senior students on 15th May 2025.</p>
+            </div>
+            <div class="date">10 May 2025</div>
+        </div>
+
+        <div class="notice-item">
+            <div class="content">
+                <h3>School Reopening Notice</h3>
+                <p>The school will reopen on 10th June 2025 after the summer break.</p>
+            </div>
+            <div class="date">1 Jun 2025</div>
+        </div>
+
+        <div class="notice-item">
+            <div class="content">
+                <h3>New Uniform Policy</h3>
+                <p>Effective from 1st August 2025, new uniforms will be mandatory for all students.</p>
+            </div>
+            <div class="date">15 Jul 2025</div>
+        </div>
+
+        <div class="notice-item">
+            <div class="content">
+                <h3>Teachers' Day Celebration</h3>
+                <p>Join us for a special assembly to celebrate Teachers' Day on 5th September 2025.</p>
+            </div>
+            <div class="date">30 Aug 2025</div>
+        </div>
+
+        <div class="notice-item">
+            <div class="content">
+                <h3>Science Exhibition</h3>
+                <p>The Annual Science Exhibition will be held on 15th October 2025. All are welcome!</p>
+            </div>
+            <div class="date">5 Oct 2025</div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="footer-column">
+        <h3>Address</h3>
+        <p>Rising Sun High School</p>
+        <p>Namkum, Ranchi-834010</p>
+        <p>Tel: +91 22 35637000 / 7001</p>
+        <p>Email: <a href="mailto:info@bwbs.org">info@bwbs.org</a></p>
+        <p>Website: <a href="http://www.bwbs.org" target="_blank">www.Bwbs.org</a></p>
+    </div>
+    <div class="separator"></div>
+    <div class="footer-column">
+        <h3>Links</h3>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Results</a></li>
+            <li><a href="#">Happenings</a></li>
+            <li><a href="#">Campus</a></li>
+            <li><a href="#">Contact Us</a></li>
+    </div>
+    <div class="separator"></div>
+    <div class="footer-column">
+        <h3>For Admissions</h3>
+        <p>Please email your queries to:</p>
+        <p><a href="mailto:admissions@bwbs.org">admissions@bwbs.org</a></p>
+        <div class="logos">
+            <img src="https://via.placeholder.com/50" alt="Logo 1">
+            <img src="https://via.placeholder.com/50" alt="Logo 2">
+        </div>
+    </div>
+</footer>
+<div class="copyright">
+    &copy; Rising Sun High School
+</div>
+</body>
+</html>
+
+</body>
+</html>
+
+
+

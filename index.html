@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Sun High School</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+
+        .header {
+            background-color: #007bff;
+            padding: 5px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .news {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .news span {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            align-items: center;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+        }
+
+        .navbar .logo h1 {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .navbar-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+         .hero {
+    position: relative;
+    top: -50;
+    left: -50;
+    height: 83vh;
+    width: 105%;
+    color: white;
+    align-items: left;
+    justify-content: left;
+    overflow: hidden;
+}
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+    position: absolute; /* Position the content absolutely */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    text-align: left; /* Align text to the left */
+    max-width: 600px; /* Optional: Limit the content width */
+}
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-links {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+
+            .navbar a {
+                margin: 5px 0;
+            }
+        }
+        body  {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+}
+
+nav {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: #2563eb;
+}
+
+main {
+    max-width: 1200px;
+    margin: 7rem auto 2rem;
+    padding: 0 2rem;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 3rem;
+    display: flex;
+    gap: 4rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.title {
+    color: #2563eb;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+.bio {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.number {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
+
+    .stats {
+        gap: 2rem;
+    }
+}
+.slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-links {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+
+            .navbar a {
+                margin: 5px 0;
+            }
+        }
+        body  {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .about-us {
+    display: flex;
+    align-items: flex-start;
+    padding: 50px;
+    background: linear-gradient(to bottom, #fdfeff, #fdfeff);
+    color: rgba(14, 14, 14, 0.898);
+    gap: 30px;
+    justify-content: space-between; /* Ensures space between content and image */
+}
+
+.about-us-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* left ki taraf */
+    padding-left: 50px;      /* jitna chahiye adjust karein */
+}
+
+.about-us-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: underline; /* Underline added */
+    font-weight: bold;
+}
+
+.about-us-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    font-style: italic;
+    color: #555;
+    padding-top: 10px;
+    font-family: 'Georgia', serif;
+    max-width: 100%; /* Ensure full width */
+}
+
+.about-us-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-us-image img {
+    max-width: 25%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-us-image h3 {
+    margin: 30px 0 0 0;
+    font-size: 26px;
+    font-weight: 900;
+    text-align: center;
+    color: #000;
+}
+.image-caption {
+    position: absolute; /* Position the caption below the image */
+    bottom: 10px; /* Distance from the bottom */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust positioning to ensure it's centered */
+    font-family: 'Arial', sans-serif; /* Stylish font */
+    font-weight: bold; /* Bold text */
+    font-size: 18px; /* Adjust the size as needed */
+    color: #333; /* Dark color for visibility */
+    text-transform: uppercase; /* Makes the caption more stylish */
+    letter-spacing: 2px; /* Adds space between letters */
+    background-color: rgba(255, 255, 255, 0.7); /* Slight background for better visibility */
+    padding: 5px 10px; /* Adds padding around the text */
+    border-radius: 5px; /* Rounded corners for the background */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #00b8d4;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+/* News Section */
+.news-item {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.news-item a {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.news-item a:hover {
+    color: #00b8d4;
+}
+
+.new-badge {
+    background-color: #ff4444;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    margin-left: 8px;
+}
+
+/* Events Section */
+.event-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.event-date {
+    background-color: #00b8d4;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 60px;
+}
+
+/* Notice Board */
+.notice-item {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.notice-item::before {
+    content: "📄";
+    position: absolute;
+    left: 0;
+}
+
+/* Useful Information */
+.info-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.info-item:hover {
+    background-color: #f0f0f0;
+}
+
+.info-item img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Certificate Section */
+.certificate {
+    text-align: center;
+}
+
+.certificate-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+
+        .gallery {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-rows: repeat(2, auto);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h3 {
+            margin: 0;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #ffa500;
+            color: #000;
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+            min-width: 250px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .footer-column h3 {
+            color: #003366;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #003366;
+            display: inline-block;
+        }
+        .footer-column p, .footer-column ul {
+            margin: 0;
+            line-height: 1.8;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin: 8px 0;
+        }
+        .footer-column a {
+            color: #003366;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+        .footer .separator {
+            border-left: 2px solid #003366;
+            height: auto;
+            margin: 0 20px;
+        }
+        .logos img {
+            height: 50px;
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+        .logos img:hover {
+            transform: scale(1.1);
+        }
+        .copyright {
+            text-align: center;
+            background-color: #003366;
+            color: #fff;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .footer-column:nth-child(3) {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer .separator {
+                display: none;
+            }
+            .footer-column {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="news">
+            <span>Discipline is the root of true education.</span>
+        </div>
+    </div>
+    
+    <div class="navbar">
+        <div class="logo">
+            <img src="frontlogo.jpeg" alt="Logo">
+            <h1> Rising Sun High School</h1>
+        </div>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="acedemics.html">Academics</a>
+            <a href="admission.html">Admission</a>
+            <a href="gallary.html">Gallery</a>
+            <a href="noticeboard.html">Notice Board</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Rising Sun High School</h1>
+            <p>Excellence in Education and Beyond</p>
+        </div>
+        <div class="slides">
+            <div class="slide active" style="background-image: url('front1.png');"></div>
+            <div class="slide" style="background-image: url('front\ 2.webp');"></div>
+            <div class="slide active" style="background-image: url('front3.jpeg');"></div>
+        </div>
+    </div>
+    </div> 
+    <div class="about-us">
+        <div class="about-us-content">
+            <h2>About Us</h2>
+            <p>
+                Rising Sun High School is a center of learning where students are encouraged to dream big and work hard. We focus on academic achievement, personal development, and ethical values, ensuring that every child receives the guidance and support needed to build a bright future. We provide a safe, supportive, and engaging atmosphere where students can 
+                explore their talents and interests. Through a balance of academics, sports, and extracurricular activities, we help students build confidence and leadership skills.
+                 Our goal is to inspire
+                 a passion for learning and prepare students for future success in an ever-changing world.Our dedicated teachers use innovative teaching methods to make learning enjoyable and effective. We encourage creativity, critical thinking, and problem-solving skills that help students excel in all areas of life.
+            </p>
+        </div>
+        <div style="text-align:left;">
+    <img src="vijay.jpeg" width="200">
+    <br><br>
+    <b style="font-size:22px;">Dr. Vijay Prashad</b>
+    <b style="font-size:20px;"> (Director)</b>
+</div>
+    </div>
+    <div class="container">
+        <!-- First Row -->
+        <div class="card">
+            <h2 class="card-header">Latest New</h2>
+            <div class="card-content" id="latestNews">
+                <!-- News items will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-header">Upcoming Events</h2>
+            <div class="card-content" id="upcomingEvents">
+                <!-- Events will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-header">Notice Board</h2>
+            <div class="card-content" id="noticeBoard">
+                <!-- Notices will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="card">
+            <h2 class="card-header">Useful Information</h2>
+            <div class="card-content">
+                <div class="info-links">
+
+    <a href="#" class="info-item">
+        <img src="icons/admission.png" alt="Online Admission">
+        <span>Online Admission</span>
+    </a>
+
+    <a href="#" class="info-item">
+        <img src="icons/student-login.png" alt="Student Login">
+        <span>Student Login</span>
+    </a>
+
+    <a href="#" class="info-item">
+        <img src="icons/result.png" alt="Exam Results">
+        <span>Exam Results</span>
+    </a>
+
+    <a href="#" class="info-item">
+        <img src="icons/fee-payment.png" alt="Fee Payment">
+        <span>Fee Payment</span>
+    </a>
+
+</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-header">Director School</h2>
+            <div class="card-content">
+                <div class="profile-section">
+                    <div class="profile-card">
+                        <img src="vijay.jpeg" alt="Dr. Jay sharma" class="profile-img">
+                        <div class="profile-info">
+                            <h3>Dr. Vijay Prashad</h3>
+                            <p>Principal, My College</p>
+                        </div>
+                    </div>
+                    <div class="profile-card">
+                        <img src="frontlogo.jpeg" alt="Shri Mangubhai Chhaganbhai Patel" class="profile-img">
+                        <div class="profile-info">
+                            <h3>Rising Sun High School</h3>
+                            <p>Gupta Market Anisabad Patna Bihar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-header">My College Certificate</h2>
+            <div class="card-content">
+                <div class="certificate">
+                    <img src="certificate.jpg" alt="Certificate of Excellence" class="certificate-img">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+    <div class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="front1.png" alt="Science Fair">
+                <div class="gallery-overlay">
+                    <h3>Science Fair</h3>
+                    <p>Showcasing innovation and creativity.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="front 2.webp" alt="Annual Sports Day">
+                <div class="gallery-overlay">
+                    <h3>Annual Sports Day</h3>
+                    <p>Encouraging teamwork and excellence.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="front3.jpeg" alt="Cultural Fest">
+                <div class="gallery-overlay">
+                    <h3>Cultural Fest</h3>
+                    <p>Celebrating diversity and talent.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="front1.png" alt="Art Exhibition">
+                <div class="gallery-overlay">
+                    <h3>Art Exhibition</h3>
+                    <p>A platform for budding artists.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="front 2.webp" alt="Graduation Ceremony">
+                <div class="gallery-overlay">
+                    <h3>Graduation Ceremony</h3>
+                    <p>Celebrating academic milestones.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="front3.jpeg" alt="Eco Club Activity">
+                <div class="gallery-overlay">
+                    <h3>Eco Club Activity</h3>
+                    <p>Promoting sustainability and awareness.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Address</h3>
+            <p>Rising Sun High School</p>
+            <p>Gupta Market Anisabad Patna</p>
+            <p>Tel: +91 22 35637000 / 7001</p>
+            <p>Email: <a href="mailto:info@bwbs.org">info@bwbs.org</a></p>
+            <p>Website: <a href="http://www.bwbs.org" target="_blank">www.Bwbs.org</a></p>
+        </div>
+        <div class="separator"></div>
+        <div class="footer-column">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Results</a></li>
+                <li><a href="#">Happenings</a></li>
+                <li><a href="#">Campus</a></li>
+                <li><a href="#">Contact Us</a></li>
+        </div>
+        <div class="separator"></div>
+        <div class="footer-column">
+            <h3>For Admissions</h3>
+            <p>Please email your queries to:</p>
+            <p><a href="mailto:admissions@bwbs.org">admissions@bwbs.org</a></p>
+            <div class="logos">
+                <img src="https://via.placeholder.com/50" alt="Logo 1">
+                <img src="https://via.placeholder.com/50" alt="Logo 2">
+            </div>
+        </div>
+    </footer>
+    <div class="copyright">
+        &copy; RISING SUN HIGH SCHOOL
+    </div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+    
+        function showNextSlide() {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].classList.add('active');
+        }
+    
+        // Change slide every 5 seconds
+        setInterval(showNextSlide, 5000);
+        
+    </script>
+    <script>const latestNews = [
+        { date: '31 mar 2022', title: 'Ph D merit list Part 02_16 feb 2022', isNew: true },
+        { date: '24 May 2022', title: 'Incubation Center', isNew: true },
+        { date: '31 mar 2022', title: 'Institutiional Distinctiveness', isNew: true },
+        { date: '31 mar 2022', title: 'Academic Calender Session 2019-20', isNew: true },
+        { date: '16 feb 2022', title: 'Ph D merit list Part 01_16 feb 2022', isNew: true },
+        { date: '16 feb 2022', title: 'Ph D merit list Part 02_16 feb 2022', isNew: true },
+        { date: '17 Oct 2022', title: 'Consolidate academic Calendar', isNew: true }
+    ];
+    
+    const upcomingEvents = [
+        { date: { day: 29, month: 'April' }, description: 'Seminar is conducted on BCA courses.' },
+        { date: { day: 30, month: 'April' }, description: 'Seminar is conducted on B.com courses.' },
+        { date: { day: 2, month: 'Mar' }, description: 'Conducted its 2nd convocation ceremony.' },
+        { date: { day: 5, month: 'Mar' }, description: 'Annual Meeting for Batch of BBA ( 2018 to 2021 ) and seminar will be conducted for future growth and oppurtunity.' }
+    ];
+    
+    const notices = [
+        'Participation in Climate Correction Day (CCD) Challenge for Mission LiFE',
+        'West Zone Inter University Table Teniss (man) Tournament 2022-23',
+        'PhD Registration Form for Selected Candidates',
+        'List of Activities organised under TEQIP-III',
+        'Documents for empanellment of vendor for A Class contyractor',
+        'School of Architecture College Level counselling 2022-23'
+    ];
+    
+    // Populate Latest News
+    const latestNewsContainer = document.getElementById('latestNews');
+    latestNews.forEach(news => {
+        const newsDiv = document.createElement('div');
+        newsDiv.className = 'news-item';
+        newsDiv.innerHTML = `
+            <a href="#">
+                ${news.title}
+                ${news.isNew ? '<span class="new-badge">NEW</span>' : ''}
+            </a>
+        `;
+        latestNewsContainer.appendChild(newsDiv);
+    });
+    
+    // Populate Upcoming Events
+    const upcomingEventsContainer = document.getElementById('upcomingEvents');
+    upcomingEvents.forEach(event => {
+        const eventDiv = document.createElement('div');
+        eventDiv.className = 'event-item';
+        eventDiv.innerHTML = `
+            <div class="event-date">
+                ${event.date.day}<br>${event.date.month}
+            </div>
+            <div class="event-description">${event.description}</div>
+        `;
+        upcomingEventsContainer.appendChild(eventDiv);
+    });
+    
+    // Populate Notice Board
+    const noticeBoardContainer = document.getElementById('noticeBoard');
+    notices.forEach(notice => {
+        const noticeDiv = document.createElement('div');
+        noticeDiv.className = 'notice-item';
+        noticeDiv.textContent = notice;
+        noticeBoardContainer.appendChild(noticeDiv);
+    });</script>
+
+    
+</body>
+</html>
+
+</body>
+</html>

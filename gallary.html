@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Sun High School</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+
+        .header {
+            background-color: #007bff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .news {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .news span {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            align-items: center;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+        }
+
+        .navbar .logo h1 {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .navbar-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .hero {
+    position: relative;
+    background-image: url("front1.png");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 315px 20px;
+}
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+    position: absolute; /* Position the content absolutely */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    text-align: left; /* Align text to the left */
+    max-width: 600px; /* Optional: Limit the content width */
+}
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-links {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+
+            .navbar a {
+                margin: 5px 0;
+            }
+        }
+        body  {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+       
+        
+
+         /* Gallery Section */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .gallery-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        display: block;
+    }
+
+    .gallery-item .caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+        .gallery {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+    }
+        .footer {
+            background-color: #ffa500;
+            color: #000;
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+            min-width: 250px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .footer-column h3 {
+            color: #003366;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #003366;
+            display: inline-block;
+        }
+        .footer-column p, .footer-column ul {
+            margin: 0;
+            line-height: 1.8;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin: 8px 0;
+        }
+        .footer-column a {
+            color: #003366;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+        .footer .separator {
+            border-left: 2px solid #003366;
+            height: auto;
+            margin: 0 20px;
+        }
+        .logos img {
+            height: 50px;
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+        .logos img:hover {
+            transform: scale(1.1);
+        }
+        .copyright {
+            text-align: center;
+            background-color: #003366;
+            color: #fff;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .footer-column:nth-child(3) {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer .separator {
+                display: none;
+            }
+            .footer-column {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="news">
+            <span>Discipline is the root of true education.</span>
+        </div>
+    </div>
+    
+    <div class="navbar">
+        <div class="logo">
+            <img src="frontlogo.jpeg" alt="Logo">
+            <h1>Rising Sun High School</h1>
+        </div>
+        <div class="navbar-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About us</a>
+            <a href="acedemics.html">Academics</a>
+            <a href="admission.html">Admission</a>
+            <a href="gallary.html">Gallery</a>
+            <a href="noticeboard.html">Notice Board</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+    
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Rising Sun High School</h1>
+            <p>Excellence in Education and Beyond</p>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <!-- Original Photos -->
+        <div class="gallery-item">
+            <img src="front 2.webp" alt="Gallery Image 1">
+            <div class="caption">Image Caption 1</div>
+        </div>
+        <div class="gallery-item">
+            <img src="front1.png" alt="Gallery Image 2">
+            <div class="caption">Image Caption 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="front3.jpeg" alt="Gallery Image 3">
+            <div class="caption">Image Caption 3</div>
+        </div>
+    
+        <!-- Additional Photos -->
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 4">
+            <div class="caption">Image Caption 4</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 5">
+            <div class="caption">Image Caption 5</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 6">
+            <div class="caption">Image Caption 6</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 7">
+            <div class="caption">Image Caption 7</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 8">
+            <div class="caption">Image Caption 8</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 9">
+            <div class="caption">Image Caption 9</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 10">
+            <div class="caption">Image Caption 10</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 11">
+            <div class="caption">Image Caption 11</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 12">
+            <div class="caption">Image Caption 12</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 13">
+            <div class="caption">Image Caption 13</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 14">
+            <div class="caption">Image Caption 14</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 15">
+            <div class="caption">Image Caption 15</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 16">
+            <div class="caption">Image Caption 16</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 17">
+            <div class="caption">Image Caption 17</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 18">
+            <div class="caption">Image Caption 18</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 19">
+            <div class="caption">Image Caption 19</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 20">
+            <div class="caption">Image Caption 20</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 21">
+            <div class="caption">Image Caption 21</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 22">
+            <div class="caption">Image Caption 22</div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/300" alt="Gallery Image 23">
+            <div class="caption">Image Caption 23</div>
+        </div>
+    </div>
+    
+    
+
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Address</h3>
+            <p>Rising Sun High School</p>
+            <p>Namkum, Ranchi-834010</p>
+            <p>Tel: +91 22 35637000 / 7001</p>
+            <p>Email: <a href="mailto:info@bwbs.org">info@bwbs.org</a></p>
+            <p>Website: <a href="http://www.bwbs.org" target="_blank">www.Bwbs.org</a></p>
+        </div>
+        <div class="separator"></div>
+        <div class="footer-column">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Results</a></li>
+                <li><a href="#">Happenings</a></li>
+                <li><a href="#">Campus</a></li>
+                <li><a href="#">Contact Us</a></li>
+        </div>
+        <div class="separator"></div>
+        <div class="footer-column">
+            <h3>For Admissions</h3>
+            <p>Please email your queries to:</p>
+            <p><a href="mailto:admissions@bwbs.org">admissions@bwbs.org</a></p>
+            <div class="logos">
+                <img src="https://via.placeholder.com/50" alt="Logo 1">
+                <img src="https://via.placeholder.com/50" alt="Logo 2">
+            </div>
+        </div>
+    </footer>
+    <div class="copyright">
+        &copy; Rising Sun High School
+    </div>
+</body>
+</html>
+
+</body>
+</html>

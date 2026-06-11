@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annie Besant International School</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+
+        .header {
+            background-color: #007bff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .news {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            white-space: nowrap;
+            box-sizing: border-box;
+            position: relative;
+            width: 100%;
+        }
+
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        .news span {
+            display: inline-block;
+            animation: marquee 10s linear infinite;
+        }
+
+        .navbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #f8f9fa;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            align-items: center;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+        }
+
+        .navbar .logo h1 {
+            margin: 0 10px;
+            font-size: 20px;
+            color: #000;
+        }
+
+        .navbar-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .navbar a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        
+        .hero {
+    position: relative;
+    top: -50;
+    left: -50;
+    height: 83vh;
+    width: 105%;
+    color: white;
+    align-items: left;
+    justify-content: left;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 5px; /* Distance from the top */
+    left: 5px; /* Distance from the left */
+    text-align: left; /* Align text to the left */
+    z-index: 2;
+    transform: none; /* Remove centering transform */
+    color: white; /* Ensure visibility */
+}
+
+.hero h1 {
+    font-size: 36px; /* Adjust size for better fit */
+    margin: 0;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 18px; /* Adjust size for better fit */
+    margin: 5px 0;
+}
+
+
+.slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-links {
+                width: 100%;
+                justify-content: space-between;
+                margin-top: 10px;
+            }
+
+            .navbar a {
+                margin: 5px 0;
+            }
+        }
+        body  {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .about-us {
+    display: flex;
+    align-items: flex-start;
+    padding: 50px;
+    background: linear-gradient(to bottom, #fdfeff, #fdfeff);
+    color: rgba(14, 14, 14, 0.898);
+    gap: 30px;
+    justify-content: space-between; /* Ensures space between content and image */
+}
+
+.about-us-content {
+    flex: 1; /* Takes up more space */
+    max-width: 60%; /* Restricts max width to keep content proportional */
+}
+
+.about-us-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: underline; /* Underline added */
+    font-weight: bold;
+}
+
+.about-us-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 0;
+    font-style: italic;
+    color: #555;
+    padding-top: 10px;
+    font-family: 'Georgia', serif;
+    max-width: 100%; /* Ensure full width */
+}
+
+.about-us-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Position relative to enable absolute positioning for the caption */
+}
+
+.about-us-image img {
+    max-width: 25%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.image-caption {
+    position: absolute; /* Position the caption below the image */
+    bottom: 10px; /* Distance from the bottom */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Adjust positioning to ensure it's centered */
+    font-family: 'Arial', sans-serif; /* Stylish font */
+    font-weight: bold; /* Bold text */
+    font-size: 18px; /* Adjust the size as needed */
+    color: #333; /* Dark color for visibility */
+    text-transform: uppercase; /* Makes the caption more stylish */
+    letter-spacing: 2px; /* Adds space between letters */
+    background-color: rgba(255, 255, 255, 0.7); /* Slight background for better visibility */
+    padding: 5px 10px; /* Adds padding around the text */
+    border-radius: 5px; /* Rounded corners for the background */
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #00b8d4;
+    color: white;
+    padding: 15px;
+    font-size: 1.2rem;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+/* News Section */
+.news-item {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.news-item a {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.news-item a:hover {
+    color: #00b8d4;
+}
+
+.new-badge {
+    background-color: #ff4444;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    margin-left: 8px;
+}
+
+/* Events Section */
+.event-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.event-date {
+    background-color: #00b8d4;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 60px;
+}
+
+/* Notice Board */
+.notice-item {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.notice-item::before {
+    content: "📄";
+    position: absolute;
+    left: 0;
+}
+
+/* Useful Information */
+.info-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.info-item:hover {
+    background-color: #f0f0f0;
+}
+
+.info-item img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Certificate Section */
+.certificate {
+    text-align: center;
+}
+
+.certificate-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+
+        .gallery {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-rows: repeat(2, auto);
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h3 {
+            margin: 0;
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #ffa500;
+            color: #000;
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .footer-column {
+            flex: 1;
+            padding: 0 20px;
+            min-width: 250px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+        .footer-column h3 {
+            color: #003366;
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #003366;
+            display: inline-block;
+        }
+        .footer-column p, .footer-column ul {
+            margin: 0;
+            line-height: 1.8;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin: 8px 0;
+        }
+        .footer-column a {
+            color: #003366;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+        .footer .separator {
+            border-left: 2px solid #003366;
+            height: auto;
+            margin: 0 20px;
+        }
+        .logos img {
+            height: 50px;
+            margin: 5px;
+            transition: transform 0.3s;
+        }
+        .logos img:hover {
+            transform: scale(1.1);
+        }
+        .copyright {
+            text-align: center;
+            background-color: #003366;
+            color: #fff;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .footer-column:nth-child(3) {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer .separator {
+                display: none;
+            }
+            .footer-column {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+        }
+            
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="news">
+            <span>Discipline is the root of true education.</span>
+        </div>
+    </div>
+    
+    <div class="navbar">
+        <div class="logo">
+            <img src="photos/logo.jpg" alt="Logo">
+            <h1> Annie Besant International School</h1>
+        </div>
+        <div class="navbar-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About us</a>
+            <a href="../acedemics.html">Academics</a>
+            <a href="../admission.html">Admission</a>
+            <a href="../gallary.html">Gallery</a>
+            <a href="../noticeboard.html">Notice Board</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Annie Besant International School</h1>
+            <p>Excellence in Education and Beyond</p>
+        </div>
+        <div class="slides">
+            <div class="slide active" style="background-image: url('../photos/photo.jpg');"></div>
+            <div class="slide" style="background-image: url('../photos/slide.jpg');"></div>
+        </div>
+    </div>
+    </div> 
+    <div class="about-us">
+        <div class="about-us-content">
+            <h2>About Us</h2>
+            <p>
+                Annie Besant International School is dedicated to fostering a nurturing and inclusive environment 
+                where students can achieve their full potential. Our mission is to deliver excellence in education, 
+                blending traditional values with modern methodologies. We take pride in our holistic approach, 
+                encouraging intellectual, emotional, and social growth.
+            </p>
+        </div>
+        <div class="about-us-image">
+            <img src="photos/slide7.jpg" alt="About Us Image">
+        </div>
+    </div>
+    <div class="container">
+        <!-- First Row -->
+        <div class="card">
+            <h2 class="card-header">Latest New</h2>
+            <div class="card-content" id="latestNews">
+                <!-- News items will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-header">Upcoming Events</h2>
+            <div class="card-content" id="upcomingEvents">
+                <!-- Events will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-header">Notice Board</h2>
+            <div class="card-content" id="noticeBoard">
+                <!-- Notices will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Second Row -->
+        <div class="card">
+            <h2 class="card-header">Useful Information</h2>
+            <div class="card-content">
+                <div class="info-links">
+                    <a href="#" class="info-item">
+                        <img src="online-service-icon.png" alt="Online Service">
+                        <span>Online Service</span>
+                    </a>
+                    <a href="#" class="info-item">
+                        <img src="online-results-icon.png" alt="Online Results">
+                        <span>Online Results</span>
+                    </a>
+                    <a href="#" class="info-item">
+                        <img src="exam-timetable-icon.png" alt="Exam Time Table">
+                        <span>Exam Time Table</span>
+                    </a>
+                    <a href="#" class="info-item">
+                        <img src="tenders-icon.png" alt="Tenders">
+                        <span>Tenders</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-header">Hon'ble Governor of M.P.</h2>
+            <div class="card-content">
+                <div class="profile-section">
+                    <div class="profile-card">
+                        <img src="../photos/slide7.jpg" alt="Dr. Jay sharma" class="profile-img">
+                        <div class="profile-info">
+                            <h3>Dr. Jaysharma</h3>
+                            <p>Principal, My College</p>
+                        </div>
+                    </div>
+                    <div class="profile-card">
+                        <img src="governor.jpg" alt="Shri Mangubhai Chhaganbhai Patel" class="profile-img">
+                        <div class="profile-info">
+                            <h3>Shri Mangubhai Chhaganbhai Patel</h3>
+                            <p>Hon'ble Governor of Madhya Pradesh</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="card-header">My College Certificate</h2>
+            <div class="card-content">
+                <div class="certificate">
+                    <img src="certificate.jpg" alt="Certificate of Excellence" class="certificate-img">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+    <div class="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="photos/slide1.jpg" alt="Science Fair">
+                <div class="gallery-overlay">
+                    <h3>Science Fair</h3>
+                    <p>Showcasing innovation and creativity.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="photos/slide2.jpg" alt="Annual Sports Day">
+                <div class="gallery-overlay">
+                    <h3>Annual Sports Day</h3>
+                    <p>Encouraging teamwork and excellence.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="photos/slide3.jpg" alt="Cultural Fest">
+                <div class="gallery-overlay">
+                    <h3>Cultural Fest</h3>
+                    <p>Celebrating diversity and talent.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="photos/slide4.jpg" alt="Art Exhibition">
+                <div class="gallery-overlay">
+                    <h3>Art Exhibition</h3>
+                    <p>A platform for budding artists.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="photos/slide5.jpg" alt="Graduation Ceremony">
+                <div class="gallery-overlay">
+                    <h3>Graduation Ceremony</h3>
+                    <p>Celebrating academic milestones.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="photos/slide6.jpg" alt="Eco Club Activity">
+                <div class="gallery-overlay">
+                    <h3>Eco Club Activity</h3>
+                    <p>Promoting sustainability and awareness.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Address</h3>
+            <p>Bishop Westcott Boys' School</p>
+            <p>Namkum, Ranchi-834010</p>
+            <p>Tel: +91 22 35637000 / 7001</p>
+            <p>Email: <a href="mailto:info@bwbs.org">info@bwbs.org</a></p>
+            <p>Website: <a href="http://www.bwbs.org" target="_blank">www.Bwbs.org</a></p>
+        </div>
+        <div class="separator"></div>
+        <div class="footer-column">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Results</a></li>
+                <li><a href="#">Happenings</a></li>
+                <li><a href="#">Campus</a></li>
+                <li><a href="#">Contact Us</a></li>
+        </div>
+        <div class="separator"></div>
+        <div class="footer-column">
+            <h3>For Admissions</h3>
+            <p>Please email your queries to:</p>
+            <p><a href="mailto:admissions@bwbs.org">admissions@bwbs.org</a></p>
+            <div class="logos">
+                <img src="https://via.placeholder.com/50" alt="Logo 1">
+                <img src="https://via.placeholder.com/50" alt="Logo 2">
+            </div>
+        </div>
+    </footer>
+    <div class="copyright">
+        &copy; Bishop Westcott Boys' School
+    </div>
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentIndex = 0;
+    
+        function showNextSlide() {
+            slides[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % slides.length;
+            slides[currentIndex].classList.add('active');
+        }
+    
+        // Change slide every 5 seconds
+        setInterval(showNextSlide, 5000);
+        
+    </script>
+    <script>const latestNews = [
+        { date: '31 mar 2022', title: 'Ph D merit list Part 02_16 feb 2022', isNew: true },
+        { date: '24 May 2022', title: 'Incubation Center', isNew: true },
+        { date: '31 mar 2022', title: 'Institutiional Distinctiveness', isNew: true },
+        { date: '31 mar 2022', title: 'Academic Calender Session 2019-20', isNew: true },
+        { date: '16 feb 2022', title: 'Ph D merit list Part 01_16 feb 2022', isNew: true },
+        { date: '16 feb 2022', title: 'Ph D merit list Part 02_16 feb 2022', isNew: true },
+        { date: '17 Oct 2022', title: 'Consolidate academic Calendar', isNew: true }
+    ];
+    
+    const upcomingEvents = [
+        { date: { day: 29, month: 'April' }, description: 'Seminar is conducted on BCA courses.' },
+        { date: { day: 30, month: 'April' }, description: 'Seminar is conducted on B.com courses.' },
+        { date: { day: 2, month: 'Mar' }, description: 'Conducted its 2nd convocation ceremony.' },
+        { date: { day: 5, month: 'Mar' }, description: 'Annual Meeting for Batch of BBA ( 2018 to 2021 ) and seminar will be conducted for future growth and oppurtunity.' }
+    ];
+    
+    const notices = [
+        'Participation in Climate Correction Day (CCD) Challenge for Mission LiFE',
+        'West Zone Inter University Table Teniss (man) Tournament 2022-23',
+        'PhD Registration Form for Selected Candidates',
+        'List of Activities organised under TEQIP-III',
+        'Documents for empanellment of vendor for A Class contyractor',
+        'School of Architecture College Level counselling 2022-23'
+    ];
+    
+    // Populate Latest News
+    const latestNewsContainer = document.getElementById('latestNews');
+    latestNews.forEach(news => {
+        const newsDiv = document.createElement('div');
+        newsDiv.className = 'news-item';
+        newsDiv.innerHTML = `
+            <a href="#">
+                ${news.title}
+                ${news.isNew ? '<span class="new-badge">NEW</span>' : ''}
+            </a>
+        `;
+        latestNewsContainer.appendChild(newsDiv);
+    });
+    
+    // Populate Upcoming Events
+    const upcomingEventsContainer = document.getElementById('upcomingEvents');
+    upcomingEvents.forEach(event => {
+        const eventDiv = document.createElement('div');
+        eventDiv.className = 'event-item';
+        eventDiv.innerHTML = `
+            <div class="event-date">
+                ${event.date.day}<br>${event.date.month}
+            </div>
+            <div class="event-description">${event.description}</div>
+        `;
+        upcomingEventsContainer.appendChild(eventDiv);
+    });
+    
+    // Populate Notice Board
+    const noticeBoardContainer = document.getElementById('noticeBoard');
+    notices.forEach(notice => {
+        const noticeDiv = document.createElement('div');
+        noticeDiv.className = 'notice-item';
+        noticeDiv.textContent = notice;
+        noticeBoardContainer.appendChild(noticeDiv);
+    });</script>
+
+    
+</body>
+</html>
+
+</body>
+</html>
+
+   
